@@ -17,7 +17,7 @@ std::vector<byte> make_shellcode( void* string, uintptr_t engine )
 	shellcode.insert( shellcode.end( ), &code[ 0 ], &code[ 22 ] );
 
 	*( uint32_t* )	( &shellcode.at( 2 ) ) = engine;
-	*( void** )		( &shellcode.at( 7 ) ) = string;
+	*( void** )	( &shellcode.at( 7 ) ) = string;
 
 	return shellcode;
 }
